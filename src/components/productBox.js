@@ -67,7 +67,7 @@ const arrObj = [
 export default function App() {
   return (
     <>
-    <div className="w-4/5	ml-44">
+    <div className="w-4/5	ml-8 sm:ml-20 md:ml-24 lg:ml-36">
       <Grid
         m="10"
         spacing={4}
@@ -83,9 +83,9 @@ export default function App() {
           return (
           < >
             <Center  > 
-            <Card maxW="sm" >
+            <Card maxW="sm" className="hover:bg-gray-200" >
               <Link to="/menu">
-              <CardBody >
+              <CardBody className="w-full h-full">
                 <Image src={el.src} alt={el.id} borderRadius="lg" />
                 <Center><Heading fontSize='md' p="3" pt="5">{el.name}</Heading></Center>               
               </CardBody>

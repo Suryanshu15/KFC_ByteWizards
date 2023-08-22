@@ -60,8 +60,7 @@ export default function Menulist() {
         <div className="b font-bold py-4">
 
             <Link to='/menu/beverage' style={{textDecoration:'none'}}><p>BEVERAGES AND DESSERTS</p></Link>
-        </div>
-    </div>
+        </div>    </div>
     </>
   )
 }

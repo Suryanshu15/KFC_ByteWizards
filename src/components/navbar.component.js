@@ -3,7 +3,9 @@ import { BiMenu, BiMenuAltLeft } from 'react-icons/bi'
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 const NavSm = () => {
+  const { loginWithRedirect,isAuthenticated,logout,isLoading,user } = useAuth0();
   return (
+
     <>
       <div className="text-red-600 flex justify-between">
         <div className="w-12 h-8">
@@ -23,6 +25,7 @@ const NavSm = () => {
 }
 
 const NavMd = () => {
+  const { loginWithRedirect,isAuthenticated,logout,isLoading,user } = useAuth0();
   return (
     <div className="container text-red-600 flex item-center justify-around">
         <div className="w-15 h-8">
@@ -64,7 +67,7 @@ const NavLg = () => {
           
           )
           :(
-            <button onClick={() => loginWithRedirect()}>Log In</button>
+            <button onClick={() => loginWithRedirect()}>Sign in</button>
           )}
         
         <Link to="/cart"  className="h-15 w-20">
@@ -76,6 +79,7 @@ const NavLg = () => {
 }
 
 const Navbar = () => {
+  
   
   return (
     <>
