@@ -67,7 +67,7 @@ const NavLg = () => {
           
           )
           :(
-            <button onClick={() => loginWithRedirect()}>Sign in</button>
+            <button onClick={() => loginWithRedirect()} className="text-red-700 font-bold">Sign in</button>
           )}
         
         <Link to="/cart"  className="h-15 w-20">
