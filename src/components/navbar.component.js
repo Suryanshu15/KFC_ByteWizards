@@ -48,7 +48,7 @@ const NavSm = () => {
           {isOpen && 
             <div className="w-full font-bold bg-white absolute gap-4 m-0 h-full">
               {list.map((menuItem, i) => 
-                <div className="bg-white font-bold py-3 flex place-content-center">
+                <div className="bg-white w-full font-bold py-3 flex place-content-center">
                   <Link to={menuItem.link} className=""><h3>{menuItem.name}</h3></Link>
                   
                 </div>
@@ -102,11 +102,11 @@ const NavMd = () => {
   
   const { loginWithRedirect,isAuthenticated,logout,isLoading,user } = useAuth0();
   return (
-    <div className="container text-red-600 flex item-center justify-around">
+    <div className="container text-red-600 flex item-center relative justify-around">
         <div className="w-15 h-8">
         <BiMenu onClick={() => setIsOpen((prev) => !prev)} ></BiMenu>
         {isOpen && 
-            <div className="w-full font-bold bg-white absolute gap-4 m-0 h-full">
+            <div className="w-full font-bold bg-white absolute gap-4 h-full place-content-center">
               {list.map((menuItem, i) => 
                 <div className="w-full h-full bg-white font-bold py-3">
                   <Link to={menuItem.link} className=""><h3>{menuItem.name}</h3></Link>
