@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Navbar from "./components/navbar.component"
 import Footer from "./components/Footer"
-import Menu from '../src/menu/Menu';
+import Menu from './menu/Menulist';
 import Carosal from "./components/carousal/carosal.component"
 import Deal from './Deal/Deal'
 import { ClassNames } from "@emotion/react";

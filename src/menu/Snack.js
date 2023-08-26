@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import '../css/Beverage.css'
 const Snack = () => {
   const [posts, setPosts] = useState([]);
 
@@ -22,11 +22,11 @@ const Snack = () => {
   return (
     <div >
 
-        <h1>SNACK</h1>
+        <h1 className="head">SNACK</h1>
         {posts.map((products) => (
           <div className="con" key={products.id}>
             <img src={products.images}  />
-            <h3>
+            <h3 className="titl">
                {products.name}
             </h3>
             <h3>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import '../css/Beverage.css'
 
 const Chicken = () => {
   const [posts, setPosts] = useState([]);
@@ -9,7 +10,7 @@ const Chicken = () => {
       redirect: "follow",
     };
 
-    fetch("http://localhost:3004/products?cate=chickenBucket", requestOptions)
+    fetch("http://localhost:3000/products?cate=chickenBucket", requestOptions)
       .then((response) => response.json())
       .then((result) => setPosts(result))
       .catch((error) => console.log("error", error));
@@ -22,11 +23,11 @@ const Chicken = () => {
   return (
     <div >
 
-        <h1>CHICKEN BUCKETS</h1>
+        <h1 className="head">CHICKEN BUCKETS</h1>
         {posts.map((products) => (
           <div className="con" key={products.id}>
-            <img src={products.images}  />
-            <h3>
+            <img src={products.images}/>
+            <h3 className="titl">
                {products.name}
             </h3>
             <h3>

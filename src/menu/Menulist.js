@@ -1,66 +1,98 @@
-import React, { useEffect, useState } from 'react'
-import{ Link } from 'react-router-dom'
-
+import {
+    Flex,
+    Box,
+    Grid,
+    Heading,
+    Hide
+  } from "@chakra-ui/react";
+import VerticalLine from "../components/VerticalLine";
+import React from 'react'
+import{ Link } from 'react-scroll'
+import '../css/Menulist.css'
+import Chicken from './Chicken'
+import Meal from './Meal'
+import Burger from './Burger'
+import Snack from './Snack'
+import Beverage from './Beverage'
+import Biryani from './Biryani'
 
 export default function Menulist() {
-    const [posts, setPosts] = useState([]);
-    const getData = () => {
-        var requestOptions = {
-          method: "GET",
-          redirect: "follow",
-        };
-    
-        fetch("http://localhost:3004/products?cate=chickenBucket", requestOptions)
-          .then((response) => response.json())
-          .then((result) => setPosts(result))
-          .catch((error) => console.log("error", error));
-      };
-    
-      useEffect(() => {
-        getData();
-      }, []);
-
   return (
     <>
-    <div className="list m-20">
-        <div className=" text-lg text-red-600 font-bold">KFC</div>
-        <div className="b font-bold py-4">
+     <Box  >
+      <Grid
+        gridTemplateColumns={{lg:"1fr 4fr"}}
+        justifyContent="center"
+        margin="auto">
+        <Hide below="lg" >
+        <Box> 
+            <Flex
+              position={{md:"sticky",lg:"sticky"}}
+              top={{md:"100px",lg:"50px",xl:"50px"}}
+              left="0"
+              p="50px"
+              bg="white"
+              gap="20px"
+              justifyContent="center"
+              alignItems="start"
+              flexDir={{ lg: "column", sm: "row", md: "row" }}
+              flexWrap="wrap"
+              margin="auto"
+              width={{base:"100%",md:"100%"}}>
+              <Box >
+              
+                <VerticalLine />
+                <Heading mb="10px" size="lg">KFC MENU</Heading>
+              
+              </Box>
+           
+            
+              <Link  to="chickenBucket" activeClass="active" duration={1700} spy={true} smooth={true}>Chicken Buckets</Link>
+              
+              <Link to="boxMeals" activeClass="active" duration={1700} spy={true} smooth={true}>Box Meals</Link>
+               
+              <Link to="burgers" activeClass="active" duration={1700} spy={true} smooth={true}>Burgers</Link>
 
-            <Link to='/menu/chicken' style={{textDecoration:'none'}}><p>CHICKEN BUCKET</p></Link>
-            {posts.map((products) => (
-          <div className="con" key={products.id}>
-            <img src={products.images}  />
-            <h3>
-               {products.name}
-            </h3>
-            <h3>
-               <span>₹{products.price}</span>
-            </h3>
+              <Link to="biryaniBuckets" activeClass="active" duration={1700} spy={true} smooth={true}>Biryani Buckets</Link>
 
-            <p className="c">{products.description}</p>
-            <button class="button-34" role="button">Add Cart</button>
-          </div>
-        ))}
-        </div>
-        <div className="b font-bold  py-4">
+              <Link to="snack" activeClass="active" duration={1700} spy={true} smooth={true}>Snack</Link>
 
-            <Link to='/menu/meal' style={{textDecoration:'none'}}><p>BOX MEALS</p></Link>
-        </div>
-        <div className="b font-bold py-4">
+              <Link to="beveragesAndDesserts" activeClass="active" duration={1700} spy={true} smooth={true}>Beverages And Desserts</Link>
+             
+            </Flex>
+          
+        </Box>
+        </Hide>
 
-            <Link to='/menu/burger' style={{textDecoration:'none'}}><p>BURGERS</p></Link>
-        </div>
-        <div className="b font-bold py-4">
-            <Link to='/menu/biryani' style={{textDecoration:'none'}}><p>BIRYANI BUCKET</p></Link>
-        </div>
-        <div className="b font-bold py-4">
+        
+        <Grid  mb="50px"  boxShadow="base"  >
 
-            <Link to='/menu/snack' style={{textDecoration:'none'}}><p>SNACKS</p></Link>
-        </div>
-        <div className="b font-bold py-4">
+             <Box  id="chickenBucket" >
+                <Chicken/>
+             </Box>
 
-            <Link to='/menu/beverage' style={{textDecoration:'none'}}><p>BEVERAGES AND DESSERTS</p></Link>
-        </div>    </div>
+             <Box  id="boxMeals">
+                <Meal/>
+             </Box>
+
+             <Box  id="burgers">
+                <Burger/>
+             </Box>
+             <Box  id="biryaniBuckets">
+                <Biryani/>
+             </Box>
+
+             <Box  id="snack">
+                <Snack/>
+             </Box>
+
+             <Box  id="beveragesAndDesserts">
+                <Beverage/>
+             </Box>
+
+        </Grid>
+      </Grid>
+    </Box>
     </>
   )
 }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import '../css/Beverage.css'
 
 const Biryani = () => {
   const [posts, setPosts] = useState([]);
@@ -9,7 +10,7 @@ const Biryani = () => {
       redirect: "follow",
     };
 
-    fetch("http://localhost:3004/products?cate=biryaniBuckets", requestOptions)
+    fetch("http://localhost:3000/products?cate=biryaniBuckets", requestOptions)
       .then((response) => response.json())
       .then((result) => setPosts(result))
       .catch((error) => console.log("error", error));
@@ -21,12 +22,12 @@ const Biryani = () => {
 
   return ( 
     <div >
-        <h1>BIRYANI BUCKET</h1>
+        <h1 className="head">BIRYANI BUCKET</h1>
       
         {posts.map((products) => (
           <div className="con" key={products.id}>
             <img src={products.images}  />
-            <h3>
+            <h3 className="titl">
                {products.name}
             </h3>
             <h3>

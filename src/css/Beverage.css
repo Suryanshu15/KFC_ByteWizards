@@ -35,5 +35,17 @@ img{
 }
 
 .c{
-    font-size: 15px;
+    font-size: 12px;
 }
+
+.head{
+    font-size: 20px;
+    font-weight: bolder;
+}
+.titl{
+    font-size: 13px;
+    font-weight: bold;
+}
+ .button-34{
+    margin-top: 10px;
+ }

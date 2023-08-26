@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
+
 import '../css/Beverage.css'
 const Beverage = () => {
   const [posts, setPosts] = useState([]);
+  
+
+
+  
 
   const getData = () => {
     var requestOptions = {
@@ -9,9 +14,9 @@ const Beverage = () => {
       redirect: "follow",
     };
 
-    fetch("http://localhost:3004/products?cate=beveragesAndDesserts", requestOptions)
+    fetch("http://localhost:3000/products?cate=beveragesAndDesserts", requestOptions)
       .then((response) => response.json())
-      .then((result) => setPosts(result))
+      // .then((result) => setPosts(result))
       .catch((error) => console.log("error", error));
   };
 
@@ -19,14 +24,16 @@ const Beverage = () => {
     getData();
   }, []);
 
-  return (
-    <div >
+  
 
-        <h1>BEVERAGES AND DESSERTS</h1>
+  return (
+    <div className="cond">
+
+        <h1 className="head">BEVERAGES AND DESSERTS</h1>
         {posts.map((products) => (
           <div className="con" key={products.id}>
             <img src={products.images}  />
-            <h3>
+            <h3 className="titl">
                {products.name}
             </h3>
             <h3>
