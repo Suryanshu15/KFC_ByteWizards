@@ -9,7 +9,7 @@ const Snack = () => {
       redirect: "follow",
     };
 
-    fetch("http://localhost:3000/products?cate=snack", requestOptions)
+    fetch("http://localhost:3004/products?cate=snack", requestOptions)
       .then((response) => response.json())
       .then((result) => setPosts(result))
       .catch((error) => console.log("error", error));

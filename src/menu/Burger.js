@@ -10,7 +10,7 @@ const Burger = () => {
       redirect: "follow",
     };
 
-    fetch("http://localhost:3000/products?cate=burgers", requestOptions)
+    fetch("http://localhost:3004/products?cate=burgers", requestOptions)
       .then((response) => response.json())
       .then((result) => setPosts(result))
       .catch((error) => console.log("error", error));
