@@ -11,18 +11,16 @@ import {
   } from "@chakra-ui/react";
   import { Link } from "react-router-dom";
   import Deals from './Deals'
-  import carosal from '../components/carousal/carosal.component'
-  
-  
+  import React, { useContext } from "react";
+
   
   const Deal = () => {
     return (
       <>
-      <div>
-        <carosal />
-      </div>
-      <div className="h-28 flex justify-center items-center " >
-        <h1 className="text-white font-bold">Welcome, Enjoy Your Deals</h1>
+      <div className="w-full h-full " >
+
+        <h1 className="text-red-600 font-bold text-4xl mx-16">Welcome,</h1>
+        <h1 className="text-red-600 font-bold text-4xl mx-16">Enjoy Your Deals</h1>
       </div>
       <div ml={{sm: "2px", md:"20px", lg:"60px"}}>
         <Grid
@@ -47,10 +45,10 @@ import {
                   <Text>{dl.desc}</Text>
                 </CardBody>
                 <CardFooter >
-                    <Text className=" w-48 underline decoration-2">
+                    <Text className=" w-48 underline decoration-2 hover:font-bold">
                         Reedem
                     </Text>
-                    <Button className="bg-sky-500 border-solid border-2">View Details</Button>
+                    <Button className="bg-sky-500 border-solid border-2 hover:bg-gray-400">View Details</Button>
                 </CardFooter>
                 </Link>
               </Card>

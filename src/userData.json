@@ -1,0 +1,28 @@
+{
+    "userData": [
+        {
+            "username": "ankit",
+            "email": "ankit@mail",
+            "password": "ankit@mail",
+            "id": 1
+        },
+        {
+            "username": "sai",
+            "email": "sai@mail",
+            "password": "sai@mail",
+            "id": 2
+        },
+        {
+            "username": "link",
+            "email": "link@mail",
+            "password": "link@mail",
+            "id": 3
+        },
+        {
+            "username": "testing",
+            "email": "test@mail.com",
+            "password": "testing123",
+            "id": 4
+        }
+    ]
+}

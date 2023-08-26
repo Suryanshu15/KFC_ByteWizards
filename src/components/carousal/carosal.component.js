@@ -6,13 +6,14 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Hcarosal = () => {
   const settingsLg = {
+    
     arrows: true,
     autoplay: true,
     centerMode: true,
     slidesToShow: 1,
     slidesToScroll: 1 ,
     centerPadding:"100px",
-    infinite: true
+    infinite: true,
   }
   const settings = {
     arrows: true,
@@ -21,7 +22,7 @@ const Hcarosal = () => {
     speed: 500,
     slidesToShow: 1,
     centerPadding:"100px",
-    slidesToScroll: 1
+    slidesToScroll: 1,
   };
   // const images = [
   //   "https://cdn4.singleinterface.com/files/outlet/outlet_facebook_images/outlet_cover_photo/34404/kfc_jpg.jpg",
@@ -72,7 +73,7 @@ const Hcarosal = () => {
     </KSlider>
     </div>
 
-    <div className="hidden lg:block">
+    <div className="hidden lg:block" >
     <KSlider {...settingsLg}>
       {/* images.map((image) => (
         <div>

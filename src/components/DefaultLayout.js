@@ -4,7 +4,7 @@ const DefaultLayout = () => {
   return(
     <>
     <Products />
-
+    
     </>
   );
 };
